@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import './App.css';
 
@@ -13,18 +14,23 @@ import { PostProps } from './components/post/Post.tsx'
 
 import * as PostService from './API/PostService.ts';
 import { usePosts } from './hooks/usePosts.ts';
+import useFetching from './hooks/useFetching.ts';
 
 
 
 function App() {
 
     const [posts, setPosts] = React.useState<PostProps[]>([])
-    const [isPostsLoading, setIsPostsLoading] = React.useState<boolean>(false)
+    // const [isPostsLoading, setIsPostsLoading] = React.useState<boolean>(false)
     const [post, setPost] = React.useState<PostProps>({userId:1, id: 0, title: '', body: ''})
     const [filter, setFilter] = React.useState<filterProps>({ sort: '', query: '' })
     const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false)
 
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
+    const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
+        const posts = await PostService.getAllPosts()
+        setPosts(posts)
+    })
 
     const addPost = (e: React.MouseEvent<HTMLButtonElement>): void => {
         e.preventDefault()
@@ -43,12 +49,7 @@ function App() {
         fetchPosts()
     }, [])
 
-    async function fetchPosts(): Promise<void> {
-        setIsPostsLoading(true)
-        const posts = await PostService.getAllPosts()
-        setIsPostsLoading(false)
-        setPosts(posts)
-    }
+
 
     return (
         <div className="App">
@@ -65,6 +66,10 @@ function App() {
                 filter={filter}
                 setFilter={setFilter}
             />
+
+            {postError &&
+                <h1>Поймал ошибку</h1>    
+            }
 
             {isPostsLoading
                 ? <Loader/>
