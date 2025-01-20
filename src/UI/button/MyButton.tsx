@@ -4,13 +4,13 @@ import styles from './MyButton.module.css'
 
 interface buttonProps {
     children: React.ReactNode
-    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+    onClick: (e: React.MouseEvent<HTMLButtonElement> | number) => void
 }
 
-const MyButton: React.FC<buttonProps> = ({children, ...props}) => {
+const MyButton: React.FC<buttonProps> = ({ children, ...props }) => {
     return (
         <button {...props} className={styles.button}>{children}</button>
     );
 }
- 
+
 export default MyButton;

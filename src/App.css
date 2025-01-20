@@ -15,3 +15,14 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.pageButton{
+  padding: 6px;
+  border: 2px solid teal;
+
+  cursor: pointer;
+}
+.pageButton__current{
+  border: 2px solid coral;
+  font-weight: bold;
+}
