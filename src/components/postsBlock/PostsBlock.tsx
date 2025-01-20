@@ -10,12 +10,6 @@ interface postBlockProps{
 
 const PostsBlock: React.FC<postBlockProps> = ({posts, removePost}) => {
 
-    if (!posts.length) {
-        return (
-            <h1 style={{textAlign: 'center'}}>Посты не найдены</h1>
-        )
-    }
-
     return (
         <div className={styles.postBlock}>
             {posts.map((post, index) => 

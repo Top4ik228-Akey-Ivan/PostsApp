@@ -6,12 +6,14 @@ import PostFilter, { filterProps } from './components/PostFilter/PostFilter.tsx'
 import PostForm from './components/postForm/PostForm.tsx';
 import Modal from './components/modal/Modal.tsx';
 import MyButton from './UI/button/MyButton.tsx';
+import Loader from './UI/Loader/Loader.tsx';
 
 
 import { PostProps } from './components/post/Post.tsx'
 
 import * as PostService from './API/PostService.ts';
 import { usePosts } from './hooks/usePosts.ts';
+
 
 
 function App() {
@@ -65,7 +67,7 @@ function App() {
             />
 
             {isPostsLoading
-                ? <h1 style={{ textAlign: 'center' }}>Загрузка ...</h1>
+                ? <Loader/>
                 : <PostsBlock removePost={removePost} posts={sortedAndSearchedPosts} />
             }
         </div>
