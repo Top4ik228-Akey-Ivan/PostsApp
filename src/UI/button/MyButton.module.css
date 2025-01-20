@@ -1,0 +1,6 @@
+.button{
+    padding: 10px 20px;
+    border: 2px solid teal;
+    background-color: inherit;
+    cursor: pointer;
+}
