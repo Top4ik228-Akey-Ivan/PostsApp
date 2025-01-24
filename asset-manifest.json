@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/PostsApp/static/css/main.d9959562.css",
-    "main.js": "/PostsApp/static/js/main.624bb258.js",
+    "main.js": "/PostsApp/static/js/main.2ab755b6.js",
     "index.html": "/PostsApp/index.html",
     "main.d9959562.css.map": "/PostsApp/static/css/main.d9959562.css.map",
-    "main.624bb258.js.map": "/PostsApp/static/js/main.624bb258.js.map"
+    "main.2ab755b6.js.map": "/PostsApp/static/js/main.2ab755b6.js.map"
   },
   "entrypoints": [
     "static/css/main.d9959562.css",
-    "static/js/main.624bb258.js"
+    "static/js/main.2ab755b6.js"
   ]
 }
