@@ -17,6 +17,10 @@
     <img src="https://img.shields.io/badge/-REACT-000000?style=for-the-badge&logo=REACT" alt="react"/>
 </div>
 
+## Деплой проекта
+Проект доступен на github pages по ссылке ниже
+### [`PostsApp`](https://top4ik228-akey-ivan.github.io/PostsApp)
+
 ## Запуск проекта
 ### Для запуска проекта 
 ### `npm i; npm run start`
