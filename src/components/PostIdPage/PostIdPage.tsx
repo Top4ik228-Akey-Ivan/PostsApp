@@ -41,8 +41,6 @@ const PostIdPage = () => {
         fetchCommentsPostById()
     }, [])
 
-    console.log(post)
-
     return (
         <div className="App">
             {isLoading
