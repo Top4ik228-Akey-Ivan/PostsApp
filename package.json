@@ -1,6 +1,7 @@
 {
   "name": "posts",
   "version": "0.1.0",
+  "homepage": "https://Top4ik228-Akey-Ivan.github.io/PostsApp",
   "private": true,
   "dependencies": {
     "@types/react": "^19.0.7",
